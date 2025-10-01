@@ -32,14 +32,14 @@ export default function App(){
       <Text style={style.title}>Calcule seu IMC:</Text>
       <View style={style.main}>
         <View>
-          <TextInput style={style.input} placeholder="Insira seu peso"
+          <TextInput style={style.input} placeholder="Insira seu peso (ex: 80)"
           onChangeText={peso=>setPeso(peso)}></TextInput>
-          <TextInput style={style.input} placeholder="Insira sua altura"
+          <TextInput style={style.input} placeholder="Insira sua altura (ex: 1.70)"
           onChangeText={altura=>setAltura(altura)}></TextInput>
         </View>
-        <Pressable onPress={()=>setImc(peso/(altura*altura))
+        <Pressable style={style.btn} onPress={()=>setImc(peso/(altura*altura))
         }>
-          <Text style={style.btn}>Calcular</Text>
+          <Text style={style.btn_text}>Calcular</Text>
         </Pressable>
       </View>
       <View>
@@ -83,8 +83,11 @@ const style = StyleSheet.create({
     width: 200,
     height: 50,
     borderRadius: 10,
-    textAlign: 'center',
-    textAlignVertical: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  btn_text:{
+    fontSize: 20,
   },
   result_label:{
     fontSize: 20,
